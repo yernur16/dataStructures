@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+var count int
+
 // Node represents the components of a binary search tree
 type Node struct {
 	Key   int
@@ -32,6 +34,7 @@ func (n *Node) Insert(k int) {
 // Search will take in a key value
 // and RETURN true if there is a node with that value
 func (n *Node) Search(k int) bool {
+	count++
 	if n == nil {
 		return false
 	}
@@ -60,6 +63,6 @@ func main() {
 	tree.Insert(400)
 	tree.Insert(120)
 
-	fmt.Println(tree.Search(354))
-	// fmt.Println(tree)
+	fmt.Println(tree.Search(5))
+	fmt.Println(count)
 }
